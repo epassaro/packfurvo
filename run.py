@@ -2,13 +2,13 @@
 
 import os
 
+import cloudscraper
 import m3u8
-import requests
 from bs4 import BeautifulSoup
 
 channel_url = "https://futbollibre.net/en-vivo/liga-profesional-argentina/"
-request = requests.get(channel_url)
-soup = BeautifulSoup(request.text, "html.parser")
+scraper = cloudscraper.CloudScraper()
+soup = BeautifulSoup(scraper.get(channel_url).text, "html.parser")
 
 streams = []
 for link in soup.find_all("a"):
