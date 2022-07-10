@@ -16,7 +16,9 @@ for link in soup.find_all("a"):
     streams = streams + urls
 
 playlist = m3u8.M3U8()
-_ = [playlist.add_playlist(l) for l in streams]
+for i, l in enumerate(streams):
+    playlist.add_playlist(f"#EXTINF:0,Canal {i+1}")
+    playlist.add_playlist(l)
 
 os.makedirs("_build", exist_ok=True)
-playlist.dump("_build/live.m3u8")
+playlist.dump("_build/live.m3u")

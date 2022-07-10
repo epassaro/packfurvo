@@ -25,11 +25,6 @@ jobs:
 
       - name: Run script
         run: python run.py
-      
-      - name: Copy playlist
-        run: |
-          cd _build
-          cp live.m3u8 live.m3u
 
       - name: Upload playlists
         uses: peaceiris/actions-gh-pages@v3
