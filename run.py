@@ -19,4 +19,4 @@ playlist = m3u8.M3U8()
 _ = [playlist.add_playlist(l) for l in streams]
 
 os.makedirs("_build", exist_ok=True)
-playlist.dump("_build/live.m3u")
+playlist.dump("_build/live.m3u8")
